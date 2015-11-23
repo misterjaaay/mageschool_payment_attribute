@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Jay_Points>
+			<version>1.0.2</version>
+		</Jay_Points>
+	</modules>
+	<global>
+		<resources>
+			<jay_points_setup>
+				<setup>
+					<module>Jay_Points</module>
+					<class>Mage_Customer_Model_Entity_Setup</class>
+				</setup>
+			</jay_points_setup>
+		</resources>
+		<helpers>
+			<jay_points>
+				<class>Jay_Points_Helper</class>
+			</jay_points>
+		</helpers>
+		<models>
+			<jay_points>
+				<class>Jay_Points_Model</class>
+			</jay_points>
+		</models>
+	</global>
+	<default>
+		<payment>
+			<jay_points>
+				<model>jay_points/payment</model>// very important thing, here you select the model for your payment method
+				<active>1</active>
+				<order_status>pending</order_status>
+				<title>Points method</title>
+				<payment_action>sale</payment_action>
+				<submit_url>https://someurl.com</submit_url>
+				<merchant_id>Insert merchant id</merchant_id>
+				<allowspecific>0</allowspecific>
+				<sort_order>1</sort_order>
+				<customer_points>1</customer_points>
+			</jay_points>
+		</payment>
+	</default>
+</config>
