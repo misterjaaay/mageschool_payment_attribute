@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version='1.0'>
+	<jay_test_index_index translate='label'>
+		<label>My label</label>
+
+		<reference name="content">
+			<block type="jay_test/jayTest" name='mytestblock' template="jay_test/index.phtml" />
+		</reference>
+	</jay_test_index_index>
+</layout>

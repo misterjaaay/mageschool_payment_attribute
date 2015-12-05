@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version='1.0'>
+	<sales_order_grid_update_handle>
+		<reference name="sales_order.grid">
+			<action method="addColumnAfter">
+				<columnId>payment_method</columnId>
+				<arguments>
+					<header>Payment Method</header>
+					<index>payment_method</index>
+					<filter_index>payment.method</filter_index>
+					<type>text</type>
+				</arguments>
+				<after>shipping_name</after>
+			</action>
+		</reference>
+	</sales_order_grid_update_handle>
+	<adminhtml_sales_order_grid>
+		<!-- apply layout handle defined above -->
+		<update handle="sales_order_grid_update_handle" />
+	</adminhtml_sales_order_grid>
+	<adminhtml_sales_order_index>
+		<!-- apply layout handle defined above -->
+		<update handle="sales_order_grid_update_handle" />
+	</adminhtml_sales_order_index>
+	<jay_blog_index_index translate='label'> <!-- то что в классе боди -->
+		<label>My label</label>
+		<reference name="head">
+			<action method='setTitle'>
+				<title>My custom title</title>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="jay_blog/jayBlock" name='myblock11' template="jay_blog/index.phtml" />
+		</reference>
+		<reference name='footer'>
+			<remove name="footer_links" />
+			<remove name="footer_links2" />
+			<block type="jay_blog/jayBlock" name='myfooter' template="jay_blog/footer.phtml" />
+			<block type="core/text" name="google.cdn.jquery">
+				<action method="setText">
+					<text><![CDATA[<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script type="text/javascript">jQuery.noConflict();</script>]]>
+					</text>
+				</action>
+			</block>
+		</reference>
+	</jay_blog_index_index>
+</layout>
